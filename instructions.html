@@ -1,0 +1,142 @@
+<!-- you can use bootstrap 3 classes to format your instructions -->
+<div class="alert alert-info">
+
+    <h2>Instructions (version 4)</h2>
+
+    <p>Duration: 50 min + 5 de tolerance</p>
+
+    <p>We want to implement a <i>software</i> to help an IT company that provides ITConsultant services with the management
+	of their employees. In this challenge, there exist two types of employees: those who pertain to the human resources
+	management area, and the IT (information technology) experts, who pertain to ITConsultant.
+
+	<p>A company is characterized by its name. A company can have multiple employees, but each employee only the belongs to
+	a single company.</p>
+
+	<p>A employee is identified by its id (<code>int</code>), name (<code>String</code>) and monthly salary (<code>int</code>).
+	The human resource employees do not have any extra attribute, however, the IT employees are associated their respective hourly
+    rate (<code>int</code>), as well as the name of the client (<code>String</code>) to which they are allocated.</p>
+
+    <p><strong>Tasks</strong></p>
+
+    <ol>
+        <li>Create the package <code>org.dropproject.samples.itcompanyassignment</code>. All code for this mini-test must be created
+            within this package.
+        </li>
+        <li>Analyse, in terms of inheritance, which relation exists between the described types of employees, knowing that
+        the classes <code>Employee</code>, <code>HRemployee</code> e <code>ITConsultant</code> must be created;
+        </li>
+        <li>The super class should contain a constructor with all the attributes identified for employees, namely
+            id (<code>int</code>), name (<code>String</code>) and salary (<code>int</code>). However, it should not
+            be possible to instantiate an object using the super class's constructor;
+        </li>
+        <li>The human resources worked type is represented by the <code>HRemployee</code> class, and it does no have
+            any attributes besides the ones defined for the <code>Employee</code> class.
+        </li>
+        <li>
+            Add to your <code>HRemployee</code> class the following method:
+            <ul>
+                <li>A <code>public String toString()</code> method, which must be implemented to return the following:
+                    <ul>
+                        <li>"&#60;id&#62; | &#60;name&#62; | &#60;salary&#62; (HR);</li>
+                    </ul>
+                    <br>Example with human resources employee:
+<pre>
+1 | Carolina Feliz | 1300 (HR)
+</pre>
+                </li>
+            </ul>
+        </li>
+        </li>
+        Add, to the appropriate classes, the following methods:
+            <ul>
+                <li>A <code>public int getId()</code> method, which returns the employee's ID.</li>
+                <li>A <code>public String getName()</code> method, which returns the employee's name.</li>
+                <li>A <code>public int getSalary()</code> method, which returns the employee's salary.</li>
+                <li>A <code>public int getValue()</code> method, which returns the IT employee's hourly rate.</li>
+                <li>A <code>public String getClient()</code> method, which returns the name of the client to which
+                    the IT employee is allocated.</li>
+            </ul>
+        </li>
+        <li>The <code>ITConsultant</code> class, wich represents the IT Consultant, must have a constructor, all the attributes
+            defined for a employee, as well as the specific attributes value (<code>int</code>) and client (<code>String</code>).
+        </li>
+        <li>Add to your <code>ITConsultant</code> class the following methods:
+            <ul>
+                <li>A <code>public String toString()</code> method, which must be implemented to return the following:
+                    <ul>
+                        <li>"&#60;id&#62; | &#60;name&#62; | &#60;salary&#62; (IT Consultant)\n
+                            &#60;client&#62; | &#60;value&#62; (hourly value)";
+                        </li>
+                    </ul>
+                    <br>Example of employee of type <i>ITConsultant</i>:
+<pre>
+1 | Diogo Costa | 1800 (IT Consultant)
+Daimler | 26 (hourly value)
+</pre>
+                </li>
+            </ul>
+        </li>
+        <li>Create the <code>Company</code> class, with the name attribute (<code>String</code>). Don't forget that the
+            company has employees. The <code>Company</code> class, besides the constructor defined by its attribute, must
+            have the followind methods:
+            <ul>
+                <li>A <code>public String getName()</code> method, which must return the companies' name.</li>
+                <li>A <code>public ArrayList&#60;Employee&#62; getEmployees()</code> method, which must return
+                    all the companies' employees.
+                </li>
+                <li>A <code>public void addEmployee(Employee employee)</code> method, which allows
+                    adding a employee to the company.
+                </li>
+                <li>A <code>public Employee getEmployeeWithHighestHourlyRate()</code> method, which returns the
+                    employee with the highest hourly rate. If there is a tie (i.e. more than one employee with the same
+                    maximum hourly rate value), the algorithm must consider the employee whose name is alphabetically
+                    smaller (e.g. since "A" is alphabetically lower than "I", when "Alf" and "Inete" have the same
+                    hourly rate, "Alf" must be returned);
+                </li>
+                <li>A <code>public String toString()</code> method, which must be implemented to return the following:
+                    <ul>
+                        <li>"The company &#60;name&#62; does not have employees." - if the company does not have any employee;
+                        </li>
+                        <li>"The company &#60;name&#62; has &#60;number_employees&#62; employees:" - if the company
+                            has at least one employee. Besides that, the information for each employee should be display,
+                            considering the respective type:
+                        </li>
+                        <li>"&#60;id&#62; | &#60;name&#62; | &#60;salary&#62; (HR)" - for human resource employees;
+                        </li>
+                        <li>"&#60;id&#62; | &#60;name&#62; | &#60;salary&#62; (IT Consultant)\n
+                            &#60;client&#62; | &#60;value&#62; (hourly value)" - for IT employees;
+                        </li>
+                    </ul>
+                    <br>Example of a company with 3 employees (one HR employee and two IT consultants):
+                    <pre>
+The company Clever Smart Reloaded Consulting has 3 employees:
+1 | Ana Bela | 1200 (HR)
+2 | João Mário | 1500 (IT Consultant)
+Nova Base | 22 (hourly value)
+3 | Ana Falcão | 1670 (IT Consultant)
+Opensoft | 24 (hourly value)
+</pre>
+                </li>
+            </ul>
+        </li>
+        <li>You must create the <code>Main</code> class, which must contain the following methods:
+            <ul>
+                <li>The <code>main(...)</code> method, without behaviour (empty).</li>
+                <li>A <code>public static Company myCompany()</code> method, which must return
+                    an object of class <code>Company</code> with the following data:
+                    <ul>
+                        <li>Company name: the last 4 digits of <strong>your</strong> student ID.
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <p><strong>Attention</strong></p>
+    <ul>
+        <li>Be careful to respect the indicated data types and formats.</li>
+        <li>It is mandatory to respect the return syntaxes of the <code>toString()</code> methods.</li>
+        <li>It may be necessary to implement abstract methods that allow differentiating the various types of employees.</li>
+    </ul>
+
+</div>
