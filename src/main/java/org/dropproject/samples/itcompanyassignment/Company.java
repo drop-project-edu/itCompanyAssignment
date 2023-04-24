@@ -27,7 +27,7 @@ public class Company {
         this.employees.add(employee);
     }
 
-    public Employee getEmployeeWithHighestHourlyRate() {
+    public Employee getEmployeeHighestHourlyRate() {
 
         ArrayList<Employee> aux = this.employees.stream()
                 .filter(employee -> employee.hasHourlyRate())
@@ -38,8 +38,8 @@ public class Company {
             @Override
             public int compare(Employee o1, Employee o2) {
 
-                Integer valueO1 = Integer.valueOf(((ITConsultant) o1).getValue());
-                Integer valueO2 = Integer.valueOf(((ITConsultant) o2).getValue());
+                Integer valueO1 = ((ITConsultant) o1).getValue();
+                Integer valueO2 = ((ITConsultant) o2).getValue();
 
                 if (valueO1.compareTo(valueO2) == 0) {
                     return o1.getName().compareTo(o2.getName());

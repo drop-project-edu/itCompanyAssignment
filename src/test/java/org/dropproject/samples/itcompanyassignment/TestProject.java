@@ -116,7 +116,7 @@ public class TestProject {
         company.addEmployee(ITConsultant2);
 
 
-        Employee employee = company.getEmployeeWithHighestHourlyRate();
+        Employee employee = company.getEmployeeHighestHourlyRate();
 
         assertEquals(2, employee.getId(), "fn getEmployeeWithHighestHourlyRate didn't return the employee (id) " +
                 "with the highest hourly rate as expected.");
@@ -151,7 +151,7 @@ public class TestProject {
         company.addEmployee(ITConsultant3);
 
 
-        Employee employee = company.getEmployeeWithHighestHourlyRate();
+        Employee employee = company.getEmployeeHighestHourlyRate();
 
         assertEquals(3, employee.getId(), "fn getEmployeeWithHighestHourlyRate didn't return the employee (id) " +
                         "with the highest hourly rate as expected.");
@@ -169,7 +169,7 @@ public class TestProject {
 
         company.addEmployee(ITConsultant4);
 
-        employee = company.getEmployeeWithHighestHourlyRate();
+        employee = company.getEmployeeHighestHourlyRate();
 
         assertEquals(5, employee.getId(), "fn getEmployeeWithHighestHourlyRate didn't return the employee (id) " +
                 "with the highest hourly rate as expected.");
